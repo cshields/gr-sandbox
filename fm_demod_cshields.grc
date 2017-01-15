@@ -323,14 +323,26 @@ TX sampling rate</value>
     </param>
   </block>
   <block>
-    <key>analog_nbfm_rx</key>
+    <key>analog_fm_demod_cf</key>
     <param>
-      <key>audio_rate</key>
-      <value>audio_samp_rate</value>
+      <key>audio_decim</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>audio_pass</key>
+      <value>15000</value>
+    </param>
+    <param>
+      <key>audio_stop</key>
+      <value>16000</value>
     </param>
     <param>
       <key>alias</key>
       <value></value>
+    </param>
+    <param>
+      <key>chan_rate</key>
+      <value>audio_samp_rate</value>
     </param>
     <param>
       <key>comment</key>
@@ -341,24 +353,28 @@ TX sampling rate</value>
       <value></value>
     </param>
     <param>
+      <key>deviation</key>
+      <value>5000</value>
+    </param>
+    <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(512, 540)</value>
+      <value>(608, 508)</value>
     </param>
     <param>
       <key>_rotation</key>
       <value>0</value>
     </param>
     <param>
-      <key>id</key>
-      <value>analog_nbfm_rx_0</value>
+      <key>gain</key>
+      <value>1.0</value>
     </param>
     <param>
-      <key>max_dev</key>
-      <value>5e3</value>
+      <key>id</key>
+      <value>analog_fm_demod_cf_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -369,12 +385,8 @@ TX sampling rate</value>
       <value>0</value>
     </param>
     <param>
-      <key>quad_rate</key>
-      <value>audio_samp_rate</value>
-    </param>
-    <param>
       <key>tau</key>
-      <value>75e-6</value>
+      <value>0.0</value>
     </param>
   </block>
   <block>
@@ -2354,7 +2366,7 @@ we shift the LO a little further</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(368, 276)</value>
+      <value>(352, 276)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2441,14 +2453,14 @@ we shift the LO a little further</value>
     </param>
   </block>
   <connection>
-    <source_block_id>analog_nbfm_rx_0</source_block_id>
+    <source_block_id>analog_fm_demod_cf_0</source_block_id>
     <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blks2_rational_resampler_xxx_1</source_block_id>
-    <sink_block_id>analog_nbfm_rx_0</sink_block_id>
+    <sink_block_id>analog_fm_demod_cf_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
